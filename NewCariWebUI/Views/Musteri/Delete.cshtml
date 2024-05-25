@@ -1,0 +1,40 @@
+﻿@model NewCari.Core.Concrete.Musteri
+
+@{
+    ViewData["Title"] = "Müşteri Sil";
+}
+
+<h1>Müşteri Sil</h1>
+
+<h3>@Model.MusteriIsmi</h3>
+
+<div>
+    <h4>Müşteri</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Cari Hareket Türü
+        </dt>
+        <dd class="col-sm-10">
+            @Model.carihareketturu
+        </dd>
+        <dt class="col-sm-2">
+            İşlem Adet
+        </dt>
+        <dd class="col-sm-10">
+            @Model.IslemAdet
+        </dd>
+        <dt class="col-sm-2">
+            Miktar
+        </dt>
+        <dd class="col-sm-10">
+            @Model.Miktar
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    </form>
+</div>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<NewCari.Core.Concrete.Musteri>
+
+@{
+    ViewData["Title"] = "Müşteri Listesi";
+}
+
+<h1>Müşteri Listesi</h1>
+
+<p>
+    <a href="@Url.Action("Add", "Musteri")" class="btn btn-primary">Yeni Müşteri Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Cari Hareket Türü</th>
+            <th>Müşteri İsmi</th>
+            <th>İşlem Adet</th>
+            <th>Miktar (TL)</th>
+            <th>Toplam (TL)</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var musteri in Model)
+            {
+                <tr>
+                    <td>@musteri.Id</td>
+                    <td>@musteri.carihareketturu</td>
+                    <td>@musteri.MusteriIsmi</td>
+                    <td>@musteri.IslemAdet</td>
+                    <td>@musteri.Miktar</td>
+                    <td>@(musteri.Miktar * musteri.IslemAdet)</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Musteri", new { id = musteri.Id })" class="btn btn-warning">Düzenle</a>
+                        <a href="@Url.Action("Delete", "Musteri", new { id = musteri.Id })" class="btn btn-danger">Sil</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8">Kayıtlı müşteri bulunmamaktadır.</td>
+            </tr>
+        }
+    </tbody>
+</table>

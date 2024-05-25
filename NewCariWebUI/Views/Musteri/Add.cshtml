@@ -1,0 +1,38 @@
+﻿@model NewCari.Core.Concrete.Musteri
+@using Microsoft.AspNetCore.Mvc.Rendering
+
+@{
+    ViewData["Title"] = "Yeni Müşteri Ekle";
+}
+
+<h1>Yeni Müşteri Ekle</h1>
+
+<form asp-action="Add" method="post">
+    <div class="form-group mb-3">
+        <label asp-for="MusteriIsmi" class="control-label">Müşteri İsmi</label>
+        <input asp-for="MusteriIsmi" class="form-control" />
+        <span asp-validation-for="MusteriIsmi" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="carihareketturu" class="control-label">Cari Hareket Türü</label>
+        <select asp-for="carihareketturu" class="form-control" asp-items="ViewBag.CariHareketTurleri"></select>
+        <span asp-validation-for="carihareketturu" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="IslemAdet" class="control-label">İşlem Adeti</label>
+        <input asp-for="IslemAdet" class="form-control" />
+        <span asp-validation-for="IslemAdet" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Miktar" class="control-label">Miktar (TL)</label>
+        <input asp-for="Miktar" class="form-control" />
+        <span asp-validation-for="Miktar" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <input type="submit" value="Kaydet" class="btn btn-primary" />
+    </div>
+</form>
