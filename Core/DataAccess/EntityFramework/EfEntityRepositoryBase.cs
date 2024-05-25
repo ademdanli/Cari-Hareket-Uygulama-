@@ -11,9 +11,9 @@ namespace NewCari.Core.DataAccess.EntityFramework
 {
     public class EfEntityRepositoryBase<TEntity, TContext> : IEntityRepository<TEntity>
 
-        where TEntity : class, IEntity, new() //TEntity class olmalı , IEntity türünde olmalı , newlenebilmeli.
+        where TEntity : class, IEntity, new() 
 
-        where TContext : DbContext, new()  //TContext DbContext türünde olmalı , newlenebilmeli 
+        where TContext : DbContext, new() 
 
     {
 

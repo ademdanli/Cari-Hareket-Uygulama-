@@ -12,17 +12,30 @@
     }
 
     .content {
-        background-color: rgba(255, 255, 255, 0.8); /* Beyaz arka plan ve şeffaflık */
+        background-color: rgba(255, 255, 255, 0.8); 
         padding: 30px;
         border-radius: 10px;
          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
+
+    .btn-gold {
+        background-color: #FFD700; 
+        border-color: #FFD700; 
+        color: black; 
+    }
+
+        .btn-gold:hover {
+            background-color: #FFC700; 
+            border-color: #FFC700;
+            color: black;
+        }
 </style>
+
 
 <div class="text-center mt-5 content">
     <h1 class="display-4">Cari Hareket Uygulaması</h1>
     <p class="lead">Müşterilerinize Ait Cari Hareketleri Kaydedebilir, Düzenleyebilirsiniz.</p>
     <hr class="my-4">
     <p>Müşteri listesine gitmek için aşağıdaki butonu kullanın.</p>
-    <a href="@Url.Action("Index", "Musteri")" class="btn btn-primary btn-lg mt-3">Müşteri Listesi</a>
+    <a href="@Url.Action("Index", "Musteri")" class="btn btn-gold btn-lg mt-3">Müşteri Listesi</a>
 </div>

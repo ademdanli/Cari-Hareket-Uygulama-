@@ -13,7 +13,7 @@ namespace NewCari.Core.Config
         public override void Configure(EntityTypeBuilder<Adres> builder)
         {
             base.Configure(builder);
-            // Adres entity'e özel konfigürasyonlar buraya eklenebilir
+            
         }
     }
 }
